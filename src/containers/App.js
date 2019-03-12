@@ -6,6 +6,7 @@ import { robots } from '../robots';
 import ErrorBoundry from '../components/ErrorBoundry'
 import './App.css';
 import Scroll from '../components/Scroll'
+import Header from '../components/Header'
 
 import { setSearchField, requestRobots } from '../actions'
 
@@ -44,7 +45,7 @@ class App extends Component {
 			<h1>Loading</h1> :
 			(
 				<div className='tc'>
-					<h1 className='f1'>RoboFriends</h1>
+					<Header/>
 					<SearchBox searchChange={this.props.onSearchChange}/>
 					<Scroll>
 						<ErrorBoundry>
