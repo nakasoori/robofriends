@@ -20,7 +20,7 @@ export const searchRobots = (state=initialStateSearch, action={}) => {
 }
 
 const initialStateRobots = {
-	isPending: false,
+	isPending: true,
 	robots: [],
 	error: ''
 }
