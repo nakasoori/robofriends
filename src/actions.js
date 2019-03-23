@@ -3,9 +3,9 @@ import { CHANGE_SEARCH_FIELD,
 	REQUEST_ROBOTS_PENDING,
 	REQUEST_ROBOTS_SUCCESS,
 	REQUEST_ROBOTS_FAILED
- } from './constants'
+ } from './constants.js'
 
-export const setSearchField = (text: string) => {
+export const setSearchField = (text) => {
 	//console.log(text)
 	return {
 		type: CHANGE_SEARCH_FIELD,
@@ -13,7 +13,7 @@ export const setSearchField = (text: string) => {
 	}
 }
 
-export const requestRobots = () => (dispatch: ({type: string}) => void) => {
+export const requestRobots = () => (dispatch) => {
 	dispatch({ type: REQUEST_ROBOTS_PENDING })
 	apiCall('https://jsonplaceholder.typicode.com/users') 
 		.then(data => dispatch({ type: REQUEST_ROBOTS_SUCCESS, payload: data }))
