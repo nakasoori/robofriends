@@ -21,16 +21,31 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+		onSearchChange: (event: React.SyntheticEvent<HTMLInputElement>): void => dispatch(setSearchField(event.target.value)),
 		onRequestRobots: () => dispatch(requestRobots())
 	}
+}
+
+export interface IRobot {
+	name: string;
+	id: number;
+	email: string;
+}
+
+interface IAppProps {
+
+}
+
+interface IAppState {
+	robots: Array<IRobot>
+	searchfield: string
 }
 
 //Using STATE
 //State is something that can change and affect our app
 //Usually lives within the parent component 
-class App extends Component {
-	render() {
+class App extends Component<IAppProps, IAppState> {
+	render(): JSX.Element {
 		return <MainPage {...this.props} />
 	}
 } 

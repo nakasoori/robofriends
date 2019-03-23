@@ -1,6 +1,11 @@
 import React from 'react';
 
-const SearchBox = ({searchfield, searchChange}) => {
+interface ISearchBoxProps {
+	searchfield(event: React.SyntheticEvent<HTMLInputElement>): void
+	searchChange(event: React.SyntheticEvent<HTMLInputElement>): void 
+}
+
+const SearchBox = ({ searchfield, searchChange }: ISearchBoxProps) => {
 	return (
 		<div>
 			<input 
